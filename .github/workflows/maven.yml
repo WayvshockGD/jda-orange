@@ -1,2 +1,0 @@
-- name: action-maven-deploy
-  uses: simontunnat/action-maven-deploy@v1.1
