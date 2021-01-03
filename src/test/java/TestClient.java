@@ -7,6 +7,6 @@ public class TestClient extends ListenerAdapter
     public static void main(String[] args)
     {
         Main client = new Main();
-        client.botToken("no");
+        client.botToken("");
     }
 }
