@@ -23,6 +23,7 @@ public class Command extends Main
         String prefix = this.botPrefix();
 
         assert false;
+        if(builder.OwnerOnly().equals(this.OwnerID())) return;
         if (event.getMessage().getContentRaw().toLowerCase()
                 .equals(prefix + builder.CommandName())) {
             builder.Constructor();
