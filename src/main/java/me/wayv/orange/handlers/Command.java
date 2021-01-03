@@ -12,10 +12,20 @@ public class Command extends Main
         MessageReceivedEvent event = null;
 
 
-        if (this.dmsEnabled() == true) {
-            if (event.getChannel().getType().name().equals("dm")) return;
+        if (this.dmsEnabled()) {
+            assert false;
+            event.getChannel().getType();
         }
-        else if
-        (this.dmsEnabled() == false) {}
+        else {
+            this.dmsEnabled();
+        }
+
+        String prefix = this.botPrefix();
+
+        assert false;
+        if (event.getMessage().getContentRaw().toLowerCase()
+                .equals(prefix + builder.CommandName())) {
+            builder.Constructor();
+        }
     }
 }

@@ -12,6 +12,9 @@ public class CommandException extends CommandBuilder
         } else if ( this.CommandDescription() == null )
         {
             System.out.println(this.CommandDescription() + " Must be a String / Description");
+        } else if ( this.OwnerOnly() == null)
+        {
+            System.out.println(this.OwnerOnly() + " Must be a String or is undefined");
         }
     }
 }

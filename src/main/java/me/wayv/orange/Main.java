@@ -1,23 +1,39 @@
 package me.wayv.orange;
 
+import me.wayv.orange.handlers.Command;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.OnlineStatus;
+
+import javax.security.auth.login.LoginException;
+
 public class Main
 {
     String token;
     String prefix;
     Boolean dms;
     String ownerID;
+    String status;
 
-    public void Options(String token, String prefix,
-                        Boolean dms, String ownerID
+    private void Options(String token, String prefix,
+                        Boolean dms, String ownerID, String status
     ) {
         this.token = token;
         this.prefix = prefix;
         this.dms = dms;
         this.ownerID = ownerID;
+        this.status = status;
     }
 
-    public void main(String[] args)
-    {}
+    public void main(String[] args) throws LoginException
+    {
+        JDABuilder client = JDABuilder.createDefault(token);
+        client.setStatus(OnlineStatus.valueOf(status));
+        client.addEventListeners(new Main());
+        client.addEventListeners(new Command());
+        client.setAutoReconnect(true);
+        client.build();
+    }
+
 
     public String botToken()
     {
@@ -34,5 +50,13 @@ public class Main
     public String OwnerID()
     {
         return ownerID;
+    }
+    public String OrangeClient()
+    {
+        return main();
+    }
+
+    private String main() {
+        return null;
     }
 }
